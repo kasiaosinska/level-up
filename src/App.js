@@ -14,6 +14,9 @@ class App extends Component {
     })
     .then(response => response.json())
     .then(data => this.setState({details: data}))
+    .catch(error => {
+      return error;
+    })
   }
 
   render() {

@@ -2,10 +2,11 @@ import styled from 'styled-components'
 
 export const RocketInfo = styled.div`
   display: grid;
-  grid-template-columns: 700px 700px;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas: "mainInfo details";
   padding: 50px 30px;
+  box-sizing: border-box;
 `;
 
 export const MainInfo = styled.div`
@@ -20,7 +21,7 @@ export const Date = styled.p`
   font-size: 14px;
   font-weight: 400;
   color: #666666;
-  letter-spacing: 4px;
+  letter-spacing: 10px;
   text-transform: uppercase;
 `;
 
@@ -43,3 +44,26 @@ export const Counter = styled.p`
 export const Image = styled.img`
   margin-top: 30px;
 `;
+
+export const Title = styled.p`
+  width: 100%;
+  border-bottom: 1.5px solid #ccac5b;
+  color: #ccac5b;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  line-height: 50px;
+`;
+
+export const Text = styled.p`
+  font-size: 14px;
+  font-weight: 400;
+  letter-spasing: 0.5px;
+  line-height: 20px;
+`;
+
+export const ListWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`

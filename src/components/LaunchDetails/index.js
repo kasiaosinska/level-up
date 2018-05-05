@@ -1,8 +1,24 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { RocketInfo, MainInfo, Details, Date, Name, Counter, Image } from './styled'
+import { RocketInfo, MainInfo, Details, Date, Name, Counter, Image, Title, Text, ListWrapper } from './styled'
 import Header from '../../components/Header'
+import List from '../../components/List'
 import dateConverter from '../../utils/dateCoverter'
+
+const rocketDetails = [
+  {
+    name: 'Name',
+    val: 'Rocket',
+  },
+  {
+    name: 'aaa',
+    val: 'aaa',
+  },
+  {
+    name: 'height',
+    val: '100kg',
+  }
+];
 
 class LaunchDetails extends Component {
 
@@ -20,9 +36,26 @@ class LaunchDetails extends Component {
             <Image src={links.mission_patch_small} alt='rocket-patch'/>
           </MainInfo>
           <Details>
-            Details
-            <p>{details}</p>
-            Rocket
+            <div>
+              <Title>Details</Title>
+              <Text>{details}</Text>
+            </div>
+            <div>
+              <Title>Rocket</Title>
+              <ListWrapper>
+                <List data={rocketDetails} />
+                <List data={rocketDetails} />
+              </ListWrapper>
+              <Text>{details}</Text>
+            </div>
+            <div>
+              <Title>Launch Pad</Title>
+              <ListWrapper>
+                <List data={rocketDetails} />
+                <List data={rocketDetails} />
+              </ListWrapper>
+              <Text>{details}</Text>
+            </div>
           </Details>
         </RocketInfo>
       </div>
