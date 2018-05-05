@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Wrapper, Button, Timer, SuccessText } from "./style";
+import { Wrapper, Button, Timer, SuccessText } from "./styled";
 
 class Counter extends Component {
 

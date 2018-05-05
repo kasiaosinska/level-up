@@ -1,1 +1,1 @@
-Level-up - Kurs
+Level-up
