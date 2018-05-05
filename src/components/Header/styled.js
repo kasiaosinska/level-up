@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   grid-template-columns: 200px auto;
   padding: 10px;
   box-sizing: border-box;
-`
+`;
 
 export const Text = styled.a`
   color: #ccac5b;
@@ -17,7 +17,7 @@ export const Text = styled.a`
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 1px;
-`
+`;
 
 export const ArrowImg = styled.img`
   margin-right: 10px;
@@ -31,17 +31,17 @@ export const ArrowImg = styled.img`
     border-top: 1px solid #ccac5b;
     width: 50px;
   }
-`
+`;
 
 export const Img = styled.img`
   width: 20%;
-`
+`;
 
 export const Logo = styled.div`
   text-align: center;
   margin-left: -200px;
-`
+`;
 
 export const Link = styled.div`
   align-self: center;
-`
+`;

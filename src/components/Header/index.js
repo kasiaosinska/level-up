@@ -11,6 +11,6 @@ const Header = () => {
       <Logo><Img src={LogoImg} /></Logo>
     </Wrapper>
   )
-}
+};
 
 export default Header

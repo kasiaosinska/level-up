@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-
 import LaunchDetails from './components/LaunchDetails'
+import hasData from './utils/hasData'
 
 class App extends Component {
 
   state = {
     details: {},
-  }
+  };
 
   componentDidMount() {
     fetch('https://api.spacexdata.com/v2/launches/latest', {
@@ -17,13 +17,15 @@ class App extends Component {
   }
 
   render() {
-    return (
+    return(
+    hasData(this.state.details) ?
       <div>
           <LaunchDetails
             data={this.state.details}
           />
       </div>
-    );
+      : <div>Ładowanie...</div>
+    )
   }
 }
 
