@@ -4,7 +4,7 @@ const dateConverter = date => {
   const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
   ];
-  const month = monthNames[launchDate.getMonth() + 1];
+  const month = monthNames[launchDate.getMonth()];
   const day = launchDate.getDate();
 
   return `${day} ${month} ${year}`;

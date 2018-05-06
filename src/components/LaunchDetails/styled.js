@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import rocketImg from '../../assets/rocket.png'
+import styled from 'styled-components';
+import rocketImg from '../../assets/rocket.png';
 
 export const RocketInfo = styled.div`
   display: grid;
@@ -32,13 +32,6 @@ export const Name = styled.p`
   color: #0f1112;
   letter-spacing: 1.5px;
   margin: 12px 0 5px 0;
-  text-transform: uppercase;
-`;
-
-export const Counter = styled.p`
-  margin: 5px 0;
-  font-size: 14px;
-  font-weight: 400;
   text-transform: uppercase;
 `;
 

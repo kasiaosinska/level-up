@@ -1,8 +1,8 @@
-import React from 'react'
-import LogoImg from '../../assets/space_x_logo_bw_centered.svg'
-import Arrow from '../../assets/arrow_pointer.png'
+import React from 'react';
+import Arrow from '../../assets/arrow_pointer.png';
+import LogoImg from '../../assets/space_x_logo_bw_centered.svg';
 
-import { Wrapper, Text, ArrowImg, Img, Link, Logo } from './styled'
+import { Wrapper, Text, ArrowImg, Img, Link, Logo } from './styled';
 
 const Header = () => {
   return (
@@ -13,4 +13,4 @@ const Header = () => {
   )
 };
 
-export default Header
+export default Header;

@@ -1,39 +1,27 @@
 import React, { Component } from 'react';
-import { Wrapper, Button, Timer, SuccessText } from "./styled";
+import PropTypes from 'prop-types';
+import { Wrapper, Timer, SuccessText } from "./styled";
 
 class Counter extends Component {
 
   state = {
     success: false,
     time: {},
-    from : 5,
+    from: 0,
     to: 0,
   };
 
   countTime = (sec) => {
-    let hours = Math.floor(sec / (60 * 60));
+    let days = Math.floor(sec / (3600 * 24));
+    let hours = Math.floor(sec % (3600 * 24) / 3600);
     let minutes = Math.floor(sec % 3600 / 60);
-    let seconds = Math.floor(sec % 3600 % 60);
 
     let obj = {
+      'd': days,
       'h': hours,
-      'm' : minutes,
-      's' : seconds,
+      'm': minutes,
     };
     return obj;
-  };
-
-  componentDidMount() {
-    this.setState({time: this.countTime(this.state.from)})
-  }
-
-  startTimer = () => {
-    if (this.state.from >= this.state.to) {
-      this.timer = setInterval(this.countDown, 1000);
-      this.setState({
-        success: false,
-      });
-    }
   };
 
   countDown = () => {
@@ -43,43 +31,55 @@ class Counter extends Component {
       from: seconds,
     });
 
-    if (seconds === this.state.to) {
+    if (seconds <= this.state.to) {
       clearInterval(this.timer);
-      this.onSuccess();
+      this.setState({success: true})
     }
   };
 
-  onReset = () => {
-    this.setState({
-      time: this.countTime(this.state.from),
-    })
-  }
-
-  onSuccess = () => {
-    this.setState({
-      success: true,
-      from: 5,
-    });
-    setTimeout(this.onReset, 1000)
+  startTimer = (sec) => {
+    if (sec >= this.state.to) {
+      this.timer = setInterval(this.countDown, 1000);
+      this.setState({
+        success: false,
+      });
+    }
   };
 
+  componentDidMount() {
+    const startDate = new Date();
+    const endDate = new Date(this.props.time);
+    const timeInSec = (endDate.getTime() - startDate.getTime()) / 1000;
+
+    if (timeInSec <= 0) {
+      this.setState({success: true})
+    }
+
+    this.setState({from: timeInSec, time: this.countTime(this.state.from)});
+    this.startTimer(this.state.from)
+  }
+
   render() {
-    const { time, success } = this.state;
+    const {time, success} = this.state;
     return (
       <Wrapper>
-        <h3>Counter - Praca domowa 2</h3>
-        <div>
-          <Button onClick={this.startTimer}>Start</Button>
-          <Timer>
-            {time.h && time.h > 0 ? <span>{time.h} hours </span> : null}
-            {time.m && time.m > 0 ? <span>{time.m} minutes </span> : null}
-            {time.s && time.s > 0 ? <span>{time.s} seconds </span> : null}
-          </Timer>
-        </div>
-        {success && <SuccessText>Odliczanie zakończone. Kliknij ponownie start aby rozpocząć odliczanie.</SuccessText>}
-       </Wrapper>
+        <Timer>
+          {time.d && time.d > 0 ? <span>{time.d} days </span> : null}
+          {time.h && time.h > 0 ? <span>{time.h} hours </span> : null}
+          {time.m && time.m > 0 ? <span>{time.m} minutes to start</span> : null}
+        </Timer>
+        {success && <SuccessText>Already launched</SuccessText>}
+      </Wrapper>
     );
   }
 }
+
+Counter.propTypes = {
+  time: PropTypes.string,
+};
+
+Counter.defaultProps = {
+  time: null,
+};
 
 export default Counter;
