@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { RocketInfo, MainInfo, Details, Date, Name, Counter, Image, Title, Text, ListWrapper } from './styled'
+import { RocketInfo, MainInfo, Details, Date, Name, Counter, Image, Title, Text, ListWrapper, Links, Button, TitleCenter } from './styled'
 import Header from '../../components/Header'
 import List from '../../components/List'
 import dateConverter from '../../utils/dateCoverter'
@@ -58,6 +58,12 @@ class LaunchDetails extends Component {
             </div>
           </Details>
         </RocketInfo>
+        <Links>
+          <TitleCenter>Mission Links</TitleCenter>
+          <Button href={links.reddit_campaign}>Reddit Campaign</Button>
+          <Button href={links.presskit}>Presskit</Button>
+          <Button href={links.video_link}>Mission video</Button>
+        </Links>
       </div>
     )
   }
