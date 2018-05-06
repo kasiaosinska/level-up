@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+
 import LaunchDetails from './components/LaunchDetails';
+import Loading from './containers/Loading';
+
 import hasData from './utils/hasData';
 
 class App extends Component {
@@ -38,7 +41,7 @@ class App extends Component {
             data={this.state}
           />
       </div>
-      : <div>Ładowanie...</div>
+      : <Loading />
     )
   }
 }
