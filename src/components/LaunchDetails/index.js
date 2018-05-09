@@ -28,21 +28,15 @@ class LaunchDetails extends Component {
       },
       {
         name: 'height',
-        val: '',
-        valOne: height.meters + 'M',
-        valTwo: height.feet + 'FT',
+        val: `${height.meters}M / ${height.feet}FT`,
       },
       {
         name: 'Diameter',
-        val: '',
-        valOne: diameter.meters + 'M',
-        valTwo: diameter.feet + 'FT',
+        val: `${diameter.meters}M / ${diameter.feet}FT`,
       },
       {
         name: 'Mass',
-        val: '',
-        valOne: mass.kg + 'KG',
-        valTwo: mass.lb + 'LB',
+        val: `${mass.kg}KG / ${mass.lb}LB`,
       }
     ];
     const rocketDetailsPartTwo = [
@@ -56,11 +50,11 @@ class LaunchDetails extends Component {
       },
       {
         name: 'Success Rate',
-        val: success_rate_pct + '%',
+        val: `${success_rate_pct}%`,
       },
       {
         name: 'Cost Per Lauch',
-        val: '$' + cost_per_launch,
+        val: `$${cost_per_launch}`,
       },
     ];
     const launchPadPartOne = [
@@ -84,7 +78,7 @@ class LaunchDetails extends Component {
           <MainInfo>
             <Date>{date}</Date>
             <Name>{rocket.rocket_name}</Name>
-            <Counter time={launch_date_utc}/>
+            <Counter time="2018-05-18T22:51:00Z"/>
             <Image src={links.mission_patch_small} alt='rocket-patch'/>
           </MainInfo>
           <Details>

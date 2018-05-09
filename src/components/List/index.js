@@ -9,8 +9,6 @@ const List = (props) => {
       <ListItem key={i}>
         <Label>{item.name}:</Label>
         <Value>{item.val}</Value>
-        {item.valOne && <Value>{item.valOne}</Value>}
-        {item.valTwo && <Value>/ {item.valTwo}</Value>}
       </ListItem>
       ))
       }
